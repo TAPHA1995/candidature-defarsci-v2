@@ -1,0 +1,4 @@
+12345678@defarsci
+
+ <a class="btn btn-outline-primary" href="{{ route('module.show',$module->id ) }}">Montrer</a>
+                        <a class="btn btn-outline-success" href="{{ route('edit-module',$module->id ) }}">Éditer</a> 
