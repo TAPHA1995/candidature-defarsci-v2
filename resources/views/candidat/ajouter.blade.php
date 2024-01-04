@@ -42,6 +42,26 @@
                         foreach module 
                         @foreach ($modules as $modules)
                         <option value="{{ $modules->libele }}">{{  $modules->libele  }}</option>
+                       
+                        <!-- <option value="{{ $modules->ressourceshumaines }}">Ressources Humaines</option>
+
+                        <option value="{{ $modules->marketingdigital }}">Marketing Digital</option>
+
+                        <option value="{{ $modules->gestionprojet}}">Gestion Projet</option>
+
+                        <option value="{{ $modules->informatiquebureautique }}">Informatique Bureautique</option>
+
+                        <option value="{{ $modules->developpementweb }}">Développement Web</option>
+
+                        <option value="{{ $modules->ardino }}">Ardino(Robotique-Internet des objets connectés)</option>
+
+                        <option value="{{ $modules->modelisationimpression3d }}">Modélisation et Impression 3D</option>
+
+                        <option value="{{ $modules->maintenance }}">Maintenance</option>
+
+                        <option value="{{ $modules->mdesigngraphique}}">Design Graphique</option>
+
+                        <option value="{{ $modules->autres }}">Autres</option> -->
                         @endforeach 
                     </select>
                 </div>     

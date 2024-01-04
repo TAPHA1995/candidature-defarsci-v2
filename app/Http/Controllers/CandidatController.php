@@ -101,7 +101,7 @@ public function store(Request $request)
     $candidat->question = $validated['question'];
     $candidat->save();
     // Envoyer un e-mail de notification
-    Mail::to($validated['email'])->send(new CandidatureNotification($validated['email']));
+    // Mail::to($validated['email'])->send(new CandidatureNotification($validated['email']));
 
     // afficher un message de succès
     return back()->with('success', 'Votre candidature a été enregistrée avec succès!');
@@ -166,25 +166,27 @@ public function store(Request $request)
      */
     public function update(Request $request, $id)
     {
+        
         $candidat = Candidat::find($id);
-        $candidat->email = $validated['email'];
-        $candidat->nom = $validated['nom'];
-        $candidat->prenom = $validated['prenom'];
-        $candidat->telephone = $validated['telephone'];
-        $candidat->adresse = $validated['adresse'];
-        $candidat->domaine = $validated['domaine'];
+        // $inserer->titre = $request->input('titre');
+        $candidat->email = $request->input('email');
+        $candidat->nom = $request->input('nom');
+        $candidat->prenom = $request->input('nom');
+        $candidat->telephone =$request->input('telephone');
+        $candidat->adresse = $request->input('adresse');
+        $candidat->domaine = $request->input('domaine');
         if ($request->hasFile('myfile')) {
-        $file= $candidat->myfile = $request->file('myfile');
-        $extension =$file->getClientOriginalExtension();
-        $filename = time().'.'.$extension;
-        $file->move("file",$filename);
-        $candidat->myfile = $filename;
+            $file= $candidat->myfile = $request->file('myfile');
+            $extension =$file->getClientOriginalExtension();
+            $filename = time().'.'.$extension;
+            $file->move("file",$filename);
+            $candidat->myfile = $filename;
         }
-        $candidat->question = $validated['question'];
+        $candidat->question = $request->input('question');
         $candidat->save();
         // Envoyer un e-mail de notification
-        Mail::to($validated['email'])->send(new CandidatureNotification($validated['email']));
-        return view('candidat.liste');
+        // Mail::to($validated['email'])->send(new CandidatureNotification($validated['email']));
+        return back()->with('success', 'le candidature a été modifié(e) avec succès!');
 
     }
 

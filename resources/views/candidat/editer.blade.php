@@ -41,7 +41,16 @@
                     <label for="">Choisir votre domaine de compétence</label>
                     <select name="domaine" id="" class="form-control my-3" value="{{ $candidats->domaine }}">
 
-                    <option value="{{ $candidats->id_modules->libele }}">{{ $candidats->id_modules->libele }}</option>
+                        <option value="Ressources Humaines">Ressources Humaines</option>
+                        <option value="Marketing Digital">Marketing Digital</option>
+                        <option value="Gestion Projet">Gestion Projet</option>
+                        <option value="Informatique Bureautique">Informatique Bureautique</option>
+                        <option value="Développement Web">Développement Web</option>
+                        <option value="Ardino(Robotique-Internet des objets connectés)">Ardino(Robotique-Internet des objets connectés)</option>
+                        <option value="Modélisation et Impression 3D">Modélisation et Impression 3D</option>
+                        <option value="Maintenance">Maintenance</option>
+                        <option value="Design Graphique">Design Graphique</option>
+                        <option value="Autres">Autres</option>
                       
                     </select>
                 </div>     
